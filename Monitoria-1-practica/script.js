@@ -60,11 +60,6 @@ const renderPersonajes = (personajes) => {
 
     });
 
-    personajes.forEach(personaje => {
-
-
-    });
-
 }
 
 
