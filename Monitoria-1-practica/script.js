@@ -1,6 +1,6 @@
 // Crear un dashboard con la api de rick y morty
 
-// Para cada personaje, tienes que pintar su nombre, su imagen, si el genero del personaje es femenino el nombre debe ser de color rosa. También, debes pintar la cantidad de episodios en los que sale.
+// Para cada personaje, tienes que pintar su nombre, su imagen y la cantidad de episodios en los que sale.
 
 // Link para llamar a los personajes: https://rickandmortyapi.com/api/character
 
@@ -14,7 +14,7 @@ async function getCharacters() {
     try {
         if (res.ok) {
             const data = await res.json()
-
+            console.log(data)
             personajes = data.results
             renderPersonajes(personajes)
 
