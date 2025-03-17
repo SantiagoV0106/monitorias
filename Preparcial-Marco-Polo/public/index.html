@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Marco Polo Game</title>
+</head>
+
+<body>
+    <h1>Marco-Polo Game</h1>
+    <section id="join-game">
+        <form id="join-game-form">
+            <label for="name">
+                name
+            </label>
+            <input type="text" name="name" id="name" required>
+            <button type="submit">Join Game</button>
+        </form>
+    </section>
+
+    <section id="game" style="display: none;">
+        <h2 id="user-name"></h2>
+        <button id="play-btn" disabled="disabled">Start Game</button>
+    </section>
+
+    <section id="marco" style="display: none;">
+        <h2 id="marco-name"></h2>
+        <div id="rol-marco-container"></div>
+    </section>
+
+    <section id="polo" style="display: none;">
+        <h2 id="polo-name"></h2>
+        <div id="rol-polo-container"></div>
+    </section>
+
+    <section id="polo-especial" style="display: none;">
+        <h2 id="polo-especial-name"></h2>
+        <div id="rol-polo-especial-container"></div>
+    </section>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
