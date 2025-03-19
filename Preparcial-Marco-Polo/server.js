@@ -22,6 +22,14 @@ const roles = ['Marco', 'Especial Polo'];
 
 io.on('connection', (socket) => {
     console.log(`user connected ${socket.id} `);
+
+    socket.on('marco-scream', (message)=> {
+        io.emit('marco-screamed', message)
+    })
+
+    socket.on('polo-scream', (message)=> {
+        io.emit('polo-screamed', message)
+    })
 })
 
 
@@ -56,6 +64,20 @@ app.post('/join-game', (req, res) => {
 
 })
 
+
+app.post('/end-game', (req, res)=> {
+
+    const {result} = req.body;
+
+    if (result === 'lost') {
+        res.status(200).send({message : 'Marco lost'})
+    } else {
+        res.status(200).send({message : 'Marco won'})
+    }
+
+    io.emit('end-game', result);
+    
+})
 
 server.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
